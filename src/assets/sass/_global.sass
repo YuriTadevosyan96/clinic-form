@@ -1,0 +1,96 @@
+@use './variables' as variables
+    
+*, ::after, ::before 
+    box-sizing: border-box
+
+body
+    margin: 0
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+    font-size: 1rem
+    font-weight: 400
+    line-height: 1.5
+    color: #212529
+    text-align: left
+    background-color: #fff
+
+input[type="checkbox"] 
+    width: 15px
+    height: 15px
+
+label
+    display: inline-block
+    margin-bottom: .5rem
+
+fieldset
+    border-radius: .25rem
+    border: 1px solid variables.$color-secondary
+
+legend
+    font-size: 1.1rem
+    padding: 0 .5rem  
+
+.form-control
+    display: block
+    width: 100%
+    padding: .375rem .75rem
+    font-size: 1rem
+    line-height: 1.5
+    color: #495057
+    background-color: #fff
+    background-clip: padding-box
+    border: 1px solid variables.$color-secondary
+    border-radius: .25rem
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out    
+
+.custom-select
+    $select-image-url: '../assets/selectsvg.svg'
+    display: inline-block
+    width: 100%
+    height: calc(2.25rem + 2px)
+    padding: .375rem 1.75rem .375rem .75rem
+    line-height: 1.5
+    color: #495057
+    vertical-align: middle
+    background: #fff url(#{$select-image-url}) no-repeat right .75rem center
+    background-size: 8px 10px
+    border: 1px solid variables.$color-secondary
+    border-radius: .25rem
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+
+    &.multiselect::-webkit-scrollbar
+        display: none //remove scrollbar keep functionality though
+
+    &.multiselect
+        height: unset
+        -ms-overflow-style: none //remove scrollbar keep functionality though  /* IE and Edge */
+        scrollbar-width: none //remove scrollbar keep functionality though  /* Firefox */
+
+    &.multiselect option
+        margin: 0.3rem 0
+    
+.custom-select:not(:last-child)
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+
+.d-flex
+    display: flex
+
+.justify-content-center
+    justify-content: center
+
+.justify-content-end
+    justify-content: flex-end
+
+.align-items-center
+    align-items: center
+
+.mr-05
+    margin-right: .5rem
+
+.mb-0
+    margin-bottom: 0
+
+.mt-1
+    margin-top: 1rem
